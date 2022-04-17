@@ -10,7 +10,7 @@ Equipe:
 ## Instalation and Execution
 Step 1: Creation of virtual environments (venv)
 	
-	```python -m venv venv```
+		```python -m venv venv```
 
 Step 2: Run venv from terminal 
 
@@ -23,9 +23,16 @@ Step 2: Run venv from terminal
 Step 4: installing dependencies (it is necessary that the venv will be running)
 
 	Access the project root directory with venv running and execute: 
-	```pip install asgiref certifi chardet django-bootstrap-form idna pytz requests sqlparse urllib3 django ```
+	
+		```pip install django django-bootstrap-form ```
+
+		```pip install asgiref certifi chardet  ```
+
+		```pip install idna pytz requests sqlparse urllib3 ```
+	
 
 Step 5: Run the project (it is necessary that the venv will be running)
 
 	- Run in project root with venv running (use terminal)
-	```python manage.py runserver```
+	
+		```python manage.py runserver```
