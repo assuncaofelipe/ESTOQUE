@@ -11,7 +11,7 @@ Step 2: Run venv from terminal
 	Access the directories: 
 		```cd .\venv\Scripts\ ```
 		
-	Execute: 
+	Run: 
 		```.\activate```
 
 Step 4: installing dependencies
