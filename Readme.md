@@ -9,6 +9,7 @@ Equipe:
 
 ## Instalation and Execution
 Step 1: Creation of virtual environments (venv)
+	
 	```python -m venv venv```
 
 Step 2: Run venv from terminal 
