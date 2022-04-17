@@ -1,6 +1,11 @@
 # Project of Software Engineer II
 
 Sistema de Estoque para cadastro de produtos
+Equipe:
+- Felipe V Assunção
+- Thiago Rodrigues
+- Edson Júnior
+- José Anderson
 
 ## Instalation and Execution
 Step 1: Creation of virtual environments (venv)
