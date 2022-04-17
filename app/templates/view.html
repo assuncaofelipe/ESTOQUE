@@ -68,7 +68,7 @@
                             <td>{{ db.validade }}</td>
                             <td>{{ db.quantidade }}</td>
                             <td>
-                                <a href="#" type="button" class="btn btn-outline-danger btn-sm">Excluir Produto</a>
+                                <a href="/delete/{{db.id}}" type="button" class="btn btn-outline-danger btn-sm btnDel">Excluir Produto</a>
                                 <a href="/edit/{{db.id}}" type="button" class="btn btn-warning btn-sm">Editar</a>
                             </td>
                         </tr>
@@ -77,7 +77,9 @@
             </div>
         </div>
     </main>
-</body>
-<script src=" {% static 'js/bootstrap.bundle.min.js' %}"></script>
 
+    {% load static %}
+</body>
+<script src="{% static 'js/javascript.js' %}"></script>
+<script src=" {% static 'js/bootstrap.bundle.min.js' %}"></script>
 </html>

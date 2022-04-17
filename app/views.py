@@ -41,3 +41,8 @@ def update(request, pk):
     if form.is_valid():
         form.save()
         return redirect('produtos')
+
+def delete(request, pk):
+    db = Produto.objects.get(pk=pk)
+    db.delete()
+    return redirect('produtos')

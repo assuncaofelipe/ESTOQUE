@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse me-auto mb-2 mb-md-0" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/produtos">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/produtos">Produtos</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -41,28 +41,36 @@
     </nav>
     <!-- FIM NAVBAR-->
 
-       <!-- FORMULÁRIO-->
-<div class="col-4 m-auto pt-4 pb-2 ">
-    <h3>Adicionar Produto</h3>
-    <p class="lead">Atenção! Revise atenciosamente cada palavra digitada antes de
-        adicionar um produto</p>
-    <form  name="form" id="form" action="/create/" method="post">
-        {% csrf_token %}
-        <label for="/create/">Código do Produto: <br> {{ form.codigoProduto }} </label><br>
-        <label for="/create/">Produto: <br> {{ form.produto }} </label><br>
-        <label for="/create/">Preço: <br> {{ form.valor }} </label><br>
-        <label for="/create/">Validade: <br> {{ form.validade }} </label><br>
-        <label for="/create/">Quantidade: <br> {{ form.quantidade }} </label><br>
-        
-        <!-- BUTTONS-->
-        <a href="/produtos" type="button" class="btn btn-danger mt-2"> Cancelar </a>
-        <input id="btn-salvar" type="submit" class="btn btn-success mt-2" value="Salvar"> 
+    <!-- FORMULÁRIO-->
+    <div class="col-4 m-auto pt-4 pb-2 ">
+        <h3>Produto</h3>
+        <p class="lead">Atenção! Revise atenciosamente cada palavra digitada antes de
+            adicionar ou editar um produto</p>
+        <a href="/produtos" type="button"  class="btn btn-primary mt-2"> Ver todos os produtos </a>
+        <!-- RESULTADO DE CADASTRO -->
+        <div id="result"></div>
+        <!-- FIM RESULTADO CADASTRO -->
 
-    </form>
-</div>
-<!-- FORMULÁRIO-->
+        <div >
+            <form name="form" id="form" action="/create/" method="post" >
+                {% csrf_token %}
+                <label for="/create/">Código do Produto: <br> {{ form.codigoProduto }} </label><br>
+                <label for="/create/">Produto: <br> {{ form.produto }} </label><br>
+                <label for="/create/">Preço: <br> {{ form.valor }} </label><br>
+                <label for="/create/">Validade: <br> {{ form.validade }} </label><br>
+                <label for="/create/">Quantidade: <br> {{ form.quantidade }} </label><br>
+    
+                <!-- BUTTONS-->
+                <a href="/produtos" type="button"  class="btn btn-danger mt-2"> Cancelar </a>
+                <input id="btn-salvar" type="submit" class="btn btn-success mt-2" value="Salvar">
+    
+            </form>
+        </div>
+    </div>
+    <!-- FORMULÁRIO-->
 
-
+    {% load static %}
+    <script src="{% static 'js/javascript.js' %}"></script>
 </body>
 
 <script src=" {% static 'js/bootstrap.bundle.min.js' %}"></script>
