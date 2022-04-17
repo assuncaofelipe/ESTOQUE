@@ -24,7 +24,7 @@ Step 4: installing dependencies (it is necessary that the venv will be running)
 
 	Access the project root directory with venv running and execute: 
 	
-		```pip install django django-bootstrap-form ```
+		```pip install django django-bootstrap-v5 django-bootstrap-form ```
 
 		```pip install asgiref certifi chardet  ```
 
