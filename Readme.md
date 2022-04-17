@@ -1,4 +1,4 @@
-# Project of Software Engineer II
+# :books: Readme - Project of Software Engineer II
 
 Sistema de Estoque para cadastro de produtos
 Equipe:
@@ -33,6 +33,6 @@ Step 4: installing dependencies (it is necessary that the venv will be running)
 
 Step 5: Run the project (it is necessary that the venv will be running)
 
-	- Run in project root with venv running (use terminal)
+	Run in project root with venv running (use terminal)
 	
 		```python manage.py runserver```
