@@ -19,8 +19,8 @@
 <body>
     <!-- INICIO NAVBAR -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/produtos">Estoque</a>
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="/">Estoque</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,28 +29,40 @@
             <div class="collapse navbar-collapse me-auto mb-2 mb-md-0" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/produtos">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/produtos">Produtos</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                </form>
+                <button  class="btn btn-danger me-3" type="button">Sair</button>
             </div>
+
+            
         </div>
     </nav>
     <!-- FIM NAVBAR-->
     <main class="container col-8">
         <div class="bg-light p-5 rounded">
             <h3>Lista de Produtos</h3>
-            <p class="lead">Veja abaixo a listas de produtos cadastradas no sistema</p>
+            <p class="lead">Veja abaixo a lista de produtos cadastrados no sistema</p>
             <div class="d-grid gap-2 d-md-block">
                 <a href="/form" type="button" class="btn btn-success"> cadastrar novo produto </a>
             </div>
+            
+
+            <!-- SEARCH -->
+
+            <div class="m-auto pt-3 pb-2 text-center">
+                <form method="get">
+                    <input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
+                </form>
+            </div>
+
+            <!-- FIM SEARCH -->
+
             <div class=" m-auto pt-4 pb-2 text-center table-responsive">
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
+                            <th scope="col">id</th>
                             <th scope="col">Código do Produto</th>
                             <th scope="col">Produto</th>
                             <th scope="col">Valor</th>
@@ -58,14 +70,11 @@
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
-                    <!-- 
-                        <td>{{ dbs.validade }}</td>
-                        <th scope="col">Validade</th>
-                    -->
                     <tbody>
                         {% for dbs in db %}
                         <tr>
-                            <th scope="row">{{ dbs.codigoProduto }}</th>
+                            <th>{{ dbs.id }}</th>
+                            <th>{{ dbs.codigoProduto }}</th>
                             <td>{{ dbs.produto }}</td>
                             <td>{{ dbs.valor }}</td>                            
                             <td>{{ dbs.quantidade }}</td>
@@ -80,6 +89,21 @@
             </div>
         </div>
     </main>
+
+    <section>
+        <div class="pagination">
+            {% if db.has_previous %}
+                <a href="?page={{db.previous_page_number}}"> < </a>
+            {% endif %}
+        
+            {{db.number}}
+        
+            {% if db.has_next %}
+                <a href="?page={{db.next_page_number}}"> > </a>
+            {% endif %}
+        </div>
+    </section>
+
 </body>
 <script src=" {% static 'js/bootstrap.bundle.min.js' %}"></script>
 

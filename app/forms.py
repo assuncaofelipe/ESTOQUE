@@ -1,3 +1,4 @@
+from tkinter import Widget
 from django.forms import ModelForm
 from app.models import Produto
 

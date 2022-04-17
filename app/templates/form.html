@@ -1,6 +1,9 @@
 {% load static%}
-
 <!DOCTYPE html>
+
+<!--  Carregando a biblioteca -->
+{% load crispy_forms_tags %} 
+
 <html lang="PT-BR">
 
 <head>
@@ -25,17 +28,13 @@
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse me-auto mb-2 mb-md-0" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/produtos">Produtos</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                </form>
+                <button  class="btn btn-danger me-3" type="button">Sair</button>
             </div>
         </div>
     </nav>
@@ -46,26 +45,27 @@
         <h3>Produto</h3>
         <p class="lead">Atenção! Revise atenciosamente cada palavra digitada antes de
             adicionar ou editar um produto</p>
-        <a href="/produtos" type="button"  class="btn btn-primary mt-2"> Ver todos os produtos </a>
+        <a href="/produtos" type="button"  class="btn btn-primary mt-2 mb-2"> Ver todos os produtos </a>
         <!-- RESULTADO DE CADASTRO -->
         <div id="result"></div>
         <!-- FIM RESULTADO CADASTRO -->
-
-        <div >
+        {% block content %}
+        <div class= "form-group mt-4 ">
             <form name="form" id="form" action="/create/" method="post" >
                 {% csrf_token %}
-                <label for="/create/">Código do Produto: <br> {{ form.codigoProduto }} </label><br>
-                <label for="/create/">Produto: <br> {{ form.produto }} </label><br>
-                <label for="/create/">Preço: <br> {{ form.valor }} </label><br>
-                <label for="/create/">Validade: <br> {{ form.validade }} </label><br>
-                <label for="/create/">Quantidade: <br> {{ form.quantidade }} </label><br>
+                {{ form|crispy }}
+                <!-- {{ form.codigoProduto|as_crispy_field }} -->
     
                 <!-- BUTTONS-->
-                <a href="/produtos" type="button"  class="btn btn-danger mt-2"> Cancelar </a>
-                <input id="btn-salvar" type="submit" class="btn btn-success mt-2" value="Salvar">
+                <div class="d-grid gap-2 mt-4">
+                    <input id="btn-salvar" type="submit" class="btn btn-success" value="Salvar">
+                    <a href="/produtos" type="button"  class="btn btn-danger "> Cancelar </a>
+
+                </div>
     
             </form>
         </div>
+        {% endblock %}
     </div>
     <!-- FORMULÁRIO-->
 

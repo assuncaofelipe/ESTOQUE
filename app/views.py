@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from app.forms import ProdutoForm
 from app.models import Produto
+from django.core.paginator import Paginator
 
 # Create your views here.
 def home(request):
@@ -9,7 +10,11 @@ def home(request):
 
 def produtos(request):
     data = {}
-    data['db'] = Produto.objects.all()
+    search = request.GET.get('search')
+    if search:
+        data['db'] = Produto.objects.filter(produto__icontains=search)
+    else:
+        data['db'] = Produto.objects.all()
     return render(request, 'produtos.html', data)
 
 def form(request):
