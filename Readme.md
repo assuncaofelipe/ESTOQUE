@@ -30,6 +30,9 @@ Step 4: installing dependencies (it is necessary that the venv will be running)
 
 		```pip install idna pytz requests sqlparse urllib3 ```
 	
+	
+	All dependencies are in ```requirements.txt``` file 
+	
 
 Step 5: Run the project (it is necessary that the venv will be running)
 
