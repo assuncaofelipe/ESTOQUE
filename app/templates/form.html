@@ -51,7 +51,7 @@
         <!-- FIM RESULTADO CADASTRO -->
         {% block content %}
         <div class= "form-group mt-4 ">
-            <form name="form" id="form" action="/create/" method="post" >
+            <form name="form" id="form" action="{%if db%}/update/{{db.id}}{%else%}/create/{% endif %}" method="post" >
                 {% csrf_token %}
                 {{ form|crispy }}
                 <!-- {{ form.codigoProduto|as_crispy_field }} -->
