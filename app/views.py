@@ -1,13 +1,12 @@
-from pyexpat import model
-from re import template
+from audioop import reverse
+from email import header, message
+from pyexpat.errors import messages
+from wsgiref import headers
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render
-from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
 from app.forms import ProdutoForm
 from app.models import Produto
-from django.core.paginator import Paginator
 from django.db.models import Q
-
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -64,3 +63,6 @@ def delete(request, pk):
     db = Produto.objects.get(pk=pk)
     db.delete()
     return redirect('produtos')
+
+def handler404(request, exception):
+    return render(request, 'not_found.html')

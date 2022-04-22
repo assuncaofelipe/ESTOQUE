@@ -1,0 +1,30 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTOQUE</title>
+
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <h4 class="mt-5">Página não encontrada! Você está perdido ?</h4>
+        <h4> Clique 
+            <a href="{% url 'home' %}">aqui</a>
+            para voltar
+        </h4>
+    </div>
+</body>
+<script src=" {% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script rel="stylesheet" type="text/js" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</html>
