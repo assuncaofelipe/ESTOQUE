@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from app.views import home, produtos, form, create, view, edit, update, delete
 
 urlpatterns = [
@@ -13,4 +13,5 @@ urlpatterns = [
     path('edit/<int:pk>', edit, name='edit'),
     path('update/<int:pk>', update, name='update'),
     path('delete/<int:pk>', delete, name='delete'),
+    path('', include('usuarios.urls')),
 ]
