@@ -1,7 +1,7 @@
 {% load static%}
 <!DOCTYPE html>
 
-<!--  Carregando a biblioteca -->
+<!--  Carregando a biblioteca de Formulário do django-->
 {% load crispy_forms_tags %} 
 
 <html lang="PT-BR">
@@ -34,7 +34,7 @@
                         <a class="nav-link active" aria-current="page" href="/produtos">Produtos</a>
                     </li>
                 </ul>
-                <button  class="btn btn-danger me-3" type="button">Sair</button>
+                <a href="/logout"  class="btn btn-danger me-3" type="button">Sair</a>
             </div>
         </div>
     </nav>
